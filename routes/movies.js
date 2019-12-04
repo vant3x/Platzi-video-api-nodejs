@@ -27,10 +27,10 @@ function  moviesApi (app) {
         const { movieId } = req.params;
 
         try {
-            const createMovieId = await moviesService.getMovie({movieId});
+            const movie = await moviesService.getMovie({movieId});
 
             res.status(200).json({
-                data: movies,
+                data: movie,
                 message: 'movies retrieved'
             })
         } catch(err) {
