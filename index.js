@@ -1,4 +1,5 @@
 const express = require('express');
+const morgan = require('morgan');
 const app = express();
 
 const { config } = require('./config/index');
@@ -11,6 +12,7 @@ const moviesApi = require('./routes/movies.js');
 
 // body parser
 app.use(express.json());
+app.use(morgan('dev'));
 
 // routes
 moviesApi(app);
